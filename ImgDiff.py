@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 15 22:40:39 2020
-
-@author: chris
-"""
 from PIL import Image
 import glob
 from pathlib import Path
@@ -16,7 +10,7 @@ targetFiles= []
 for filepath in glob.iglob(r'C:\Users\chris\Desktop\Images\Scource\*.jpg'):
     sourceFiles.append(filepath)
     
-for filepath1 in glob.iglob(r'C:\Users\chris\Desktop\Images\Targer\*.jpg'):
+for filepath1 in glob.iglob(r'C:\Users\chris\Desktop\Images\Target\*.jpg'):
     targetFiles.append(filepath1)
     
 p = 1
