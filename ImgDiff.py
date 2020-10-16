@@ -26,13 +26,13 @@ root_dir = "/.../.../.../"
 for filename in glob.iglob(sourceFolder, recursive=True):
     print(filename)
     im = Image.open(filename)
-    imResize = im.resize((1240 ,1748), Image.ANTIALIAS)
+    imResize = im.resize((1748 ,2480), Image.ANTIALIAS)
     imResize.save(filename , 'JPEG', quality=90)
 
 for filename in glob.iglob(targetFolder, recursive=True):
     print(filename)
     im = Image.open(filename)
-    imResize = im.resize((1240 ,1748), Image.ANTIALIAS)
+    imResize = im.resize((1748 ,2480), Image.ANTIALIAS)
     imResize.save(filename , 'JPEG', quality=90)
     
 p = 1
