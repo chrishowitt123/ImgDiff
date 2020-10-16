@@ -1,17 +1,39 @@
 from PIL import Image
 import glob
 from pathlib import Path
+import os, sys
 
+sourceFolder = r'C:\Users\chris\Desktop\Images\Scource\*.jpg'
+targetFolder = r'C:\Users\chris\Desktop\Images\Target\*.jpg'
 
 sourceFiles = []
 targetFiles= []
 
 # Print png images in folder C:\Users\admin\
-for filepath in glob.iglob(r'C:\Users\chris\Desktop\Images\Scource\*.jpg'):
+for filepath in glob.iglob(sourceFolder):
     sourceFiles.append(filepath)
     
-for filepath1 in glob.iglob(r'C:\Users\chris\Desktop\Images\Target\*.jpg'):
+for filepath1 in glob.iglob(targetFolder):
     targetFiles.append(filepath1)
+
+from PIL import Image
+import os, sys
+import glob
+
+root_dir = "/.../.../.../"
+
+
+for filename in glob.iglob(sourceFolder, recursive=True):
+    print(filename)
+    im = Image.open(filename)
+    imResize = im.resize((1240 ,1748), Image.ANTIALIAS)
+    imResize.save(filename , 'JPEG', quality=90)
+
+for filename in glob.iglob(targetFolder, recursive=True):
+    print(filename)
+    im = Image.open(filename)
+    imResize = im.resize((1240 ,1748), Image.ANTIALIAS)
+    imResize.save(filename , 'JPEG', quality=90)
     
 p = 1
     
